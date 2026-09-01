@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo acadêmico de monitoramento de casas inteligentes com AdminLTE.">
+  <title>Dispositivos | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="sidebar" aria-label="Abrir ou recolher menu lateral"><i class="bi bi-list fs-5"></i></button></li>
+          <li class="nav-item d-none d-md-block"><a href="dashboard.html" class="nav-link">Central</a></li>
+          <li class="nav-item d-none d-lg-block"><span class="nav-link text-secondary"><span class="status-dot bg-success"></span>Serviços operacionais</span></li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link position-relative" data-bs-toggle="dropdown" href="#" aria-label="Notificações">
+              <i class="bi bi-bell"></i><span class="badge text-bg-danger notification-badge">2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" style="min-width:310px">
+              <div class="p-3 border-bottom"><strong>Notificações recentes</strong></div>
+              <a href="alertas.html" class="dropdown-item py-3"><div class="d-flex"><i class="bi bi-exclamation-triangle-fill text-danger me-3"></i><div><strong>Possível queda detectada</strong><div class="small text-secondary">Residência 03 • há 4 min</div></div></div></a>
+              <a href="dispositivos.html" class="dropdown-item py-3 border-top"><div class="d-flex"><i class="bi bi-battery-half text-warning me-3"></i><div><strong>Bateria abaixo de 20%</strong><div class="small text-secondary">Sensor de porta • há 16 min</div></div></div></a>
+              <a href="alertas.html" class="dropdown-item text-center border-top py-2">Ver todos os alertas</a>
+            </div>
+          </li>
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></li>
+          <li class="nav-item d-none d-sm-block"><button class="nav-link btn border-0" type="button" data-ui-toggle="fullscreen" aria-label="Tela cheia"><i class="bi bi-arrows-fullscreen"></i></button></li>
+          <li class="nav-item dropdown ms-1">
+            <a class="nav-link navbar-user" data-bs-toggle="dropdown" href="#"><span class="avatar-circle">OP</span><span class="d-none d-md-inline">Operador</span><i class="bi bi-chevron-down small"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Preferências</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+        <a href="dashboard.html" class="sidebar-brand">
+          <span class="brand-icon"><i class="bi bi-house-door-fill"></i></span>
+          <span class="brand-copy"><span class="brand-text">CasaSegura</span><span class="brand-subtitle">Monitoramento inteligente</span></span>
+        </a>
+        <div class="sidebar-wrapper">
+          <div class="user-panel-custom">
+            <span class="avatar-circle">OP</span>
+            <div class="meta"><strong>Operador de plantão</strong><small>Central de monitoramento</small></div>
+          </div>
+          <nav class="mt-1" aria-label="Menu principal">
+            <ul class="nav sidebar-menu flex-column" role="menu">
+              <li class="nav-header">Visão geral</li>
+              <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="nav-icon bi bi-speedometer2"></i><p>Dashboard</p></a></li>
+              <li class="nav-item"><a href="alertas.html" class="nav-link"><i class="nav-icon bi bi-exclamation-octagon"></i><p>Alertas<span class="badge text-bg-danger ms-auto">2</span></p></a></li>
+              <li class="nav-header">Monitoramento</li>
+              <li class="nav-item menu-tree menu-open">
+                <a href="#" class="nav-link active" data-ui-treeview>
+                  <i class="nav-icon bi bi-hdd-network"></i><p>Cadastros<i class="right bi bi-chevron-right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="dispositivos.html" class="nav-link active"><i class="nav-icon bi bi-broadcast-pin"></i><p>Dispositivos</p></a></li>
+                  <li class="nav-item"><a href="residentes.html" class="nav-link"><i class="nav-icon bi bi-people"></i><p>Residentes</p></a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="relatorios.html" class="nav-link"><i class="nav-icon bi bi-bar-chart-line"></i><p>Relatórios</p></a></li>
+              <li class="nav-header">Administração</li>
+              <li class="nav-item"><a href="configuracoes.html" class="nav-link"><i class="nav-icon bi bi-gear"></i><p>Configurações</p></a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-box-arrow-left"></i><p>Sair</p></a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-status-card">
+            <strong><span class="status-dot bg-success"></span>Central operacional</strong>
+            48 de 52 sensores conectados.<br><span data-current-time></span>
+          </div>
+        </div>
+      </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center g-2">
+            <div class="col-sm-8 page-title-wrap"><h1>Dispositivos</h1><p>Cadastro e acompanhamento dos sensores instalados nas residências.</p></div>
+            <div class="col-sm-4"><ol class="breadcrumb float-sm-end mb-0"><li class="breadcrumb-item"><a href="dashboard.html">Início</a></li><li class="breadcrumb-item active" aria-current="page">Dispositivos</li></ol></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content"><div class="container-fluid">
+<div class="row g-3 mb-3">
+  <div class="col-sm-6 col-xl-3"><div class="info-box"><span class="info-box-icon text-bg-primary"><i class="bi bi-broadcast-pin"></i></span><div class="info-box-content"><span class="info-box-text">Total cadastrado</span><span class="info-box-number">52</span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="info-box"><span class="info-box-icon text-bg-success"><i class="bi bi-wifi"></i></span><div class="info-box-content"><span class="info-box-text">Online</span><span class="info-box-number">48</span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="info-box"><span class="info-box-icon text-bg-warning"><i class="bi bi-battery-half"></i></span><div class="info-box-content"><span class="info-box-text">Bateria baixa</span><span class="info-box-number">3</span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="info-box"><span class="info-box-icon text-bg-danger"><i class="bi bi-wifi-off"></i></span><div class="info-box-content"><span class="info-box-text">Offline</span><span class="info-box-number">4</span></div></div></div>
+</div>
+<section class="card">
+  <div class="card-header d-flex flex-wrap align-items-center gap-2"><h2 class="card-title"><i class="bi bi-list-ul me-2"></i>Dispositivos cadastrados</h2><a href="dispositivo-form.html" class="btn btn-primary ms-auto"><i class="bi bi-plus-lg me-1"></i>Novo dispositivo</a></div>
+  <div class="card-body border-bottom"><div class="filter-toolbar"><div class="input-group"><span class="input-group-text"><i class="bi bi-search"></i></span><input type="search" class="form-control" id="deviceSearch" placeholder="Pesquisar por nome, código ou residente"></div><select class="form-select" id="deviceStatus"><option value="">Todos os status</option><option value="online">Online</option><option value="atencao">Atenção</option><option value="offline">Offline</option></select><select class="form-select" id="deviceType"><option value="">Todos os tipos</option><option value="queda">Detecção de queda</option><option value="movimento">Movimento</option><option value="ambiental">Ambiental</option><option value="acesso">Acesso</option></select><select class="form-select" id="deviceRoom"><option value="">Todos os ambientes</option><option value="sala">Sala</option><option value="quarto">Quarto</option><option value="banheiro">Banheiro</option><option value="entrada">Entrada</option><option value="cozinha">Cozinha</option></select></div></div>
+  <div class="table-responsive"><table class="table table-hover mb-0"><thead><tr><th>Dispositivo</th><th>Código</th><th>Tipo</th><th>Residência / ambiente</th><th>Bateria</th><th>Última comunicação</th><th>Status</th><th class="text-end">Ações</th></tr></thead><tbody id="deviceTableBody">
+    <tr data-name="Sensor de queda Sala 01" data-status="online" data-type="queda" data-room="sala"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-primary-subtle text-primary"><i class="bi bi-person-bounding-box"></i></span><div><strong>Sensor de queda Sala 01</strong><div class="small text-secondary">Modelo FD-Pro</div></div></div></td><td>FD-0048</td><td>Detecção de queda</td><td>Residência 03<div class="small text-secondary">Sala</div></td><td><i class="bi bi-battery-full text-success"></i> 92%</td><td>há 8 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html" title="Visualizar"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=FD-0048" title="Editar"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device title="Excluir"><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Radar de movimento Corredor" data-status="online" data-type="movimento" data-room="quarto"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-info-subtle text-info"><i class="bi bi-broadcast"></i></span><div><strong>Radar de movimento Corredor</strong><div class="small text-secondary">Modelo MM-Wave 2</div></div></div></td><td>MV-0021</td><td>Movimento</td><td>Residência 08<div class="small text-secondary">Corredor</div></td><td><i class="bi bi-battery-full text-success"></i> 81%</td><td>há 12 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=MV-0021"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Sensor ambiental Quarto" data-status="atencao" data-type="ambiental" data-room="quarto"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-warning-subtle text-warning"><i class="bi bi-thermometer-half"></i></span><div><strong>Sensor ambiental Quarto</strong><div class="small text-secondary">Modelo Enviro 4</div></div></div></td><td>AM-0017</td><td>Ambiental</td><td>Residência 01<div class="small text-secondary">Quarto</div></td><td><i class="bi bi-battery-half text-warning"></i> 18%</td><td>há 24 s</td><td><span class="badge text-bg-warning">Atenção</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=AM-0017"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Contato magnético Entrada" data-status="online" data-type="acesso" data-room="entrada"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-success-subtle text-success"><i class="bi bi-door-closed"></i></span><div><strong>Contato magnético Entrada</strong><div class="small text-secondary">Modelo DoorSafe</div></div></div></td><td>AC-0032</td><td>Acesso</td><td>Residência 05<div class="small text-secondary">Entrada</div></td><td><i class="bi bi-battery-full text-success"></i> 76%</td><td>há 31 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=AC-0032"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Sensor de presença Banheiro" data-status="offline" data-type="movimento" data-room="banheiro"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-danger-subtle text-danger"><i class="bi bi-person-bounding-box"></i></span><div><strong>Sensor de presença Banheiro</strong><div class="small text-secondary">Modelo Presence Mini</div></div></div></td><td>MV-0044</td><td>Movimento</td><td>Residência 06<div class="small text-secondary">Banheiro</div></td><td><i class="bi bi-battery text-danger"></i> 0%</td><td>há 3 h</td><td><span class="badge text-bg-danger">Offline</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=MV-0044"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Sensor de queda Quarto 02" data-status="online" data-type="queda" data-room="quarto"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-primary-subtle text-primary"><i class="bi bi-person-bounding-box"></i></span><div><strong>Sensor de queda Quarto 02</strong><div class="small text-secondary">Modelo FD-Pro</div></div></div></td><td>FD-0051</td><td>Detecção de queda</td><td>Residência 09<div class="small text-secondary">Quarto</div></td><td><i class="bi bi-battery-full text-success"></i> 88%</td><td>há 14 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=FD-0051"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Sensor de gás Cozinha" data-status="online" data-type="ambiental" data-room="cozinha"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-warning-subtle text-warning"><i class="bi bi-cloud-haze2"></i></span><div><strong>Sensor de gás Cozinha</strong><div class="small text-secondary">Modelo AirGuard</div></div></div></td><td>AM-0024</td><td>Ambiental</td><td>Residência 11<div class="small text-secondary">Cozinha</div></td><td><i class="bi bi-battery-full text-success"></i> 67%</td><td>há 19 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=AM-0024"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Botão de emergência Sala" data-status="atencao" data-type="acesso" data-room="sala"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-danger-subtle text-danger"><i class="bi bi-bell-fill"></i></span><div><strong>Botão de emergência Sala</strong><div class="small text-secondary">Modelo HelpNow</div></div></div></td><td>EM-0007</td><td>Acesso</td><td>Residência 02<div class="small text-secondary">Sala</div></td><td><i class="bi bi-battery-half text-warning"></i> 21%</td><td>há 42 s</td><td><span class="badge text-bg-warning">Atenção</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=EM-0007"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Sensor ambiental Banheiro" data-status="online" data-type="ambiental" data-room="banheiro"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-info-subtle text-info"><i class="bi bi-droplet-half"></i></span><div><strong>Sensor ambiental Banheiro</strong><div class="small text-secondary">Modelo Enviro 4</div></div></div></td><td>AM-0036</td><td>Ambiental</td><td>Residência 03<div class="small text-secondary">Banheiro</div></td><td><i class="bi bi-battery-full text-success"></i> 73%</td><td>há 17 s</td><td><span class="badge text-bg-success">Online</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=AM-0036"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+    <tr data-name="Câmera de silhueta Sala" data-status="offline" data-type="queda" data-room="sala"><td><div class="d-flex align-items-center gap-2"><span class="device-icon bg-secondary-subtle text-secondary"><i class="bi bi-camera-video"></i></span><div><strong>Câmera de silhueta Sala</strong><div class="small text-secondary">Modelo PrivacyCam</div></div></div></td><td>FD-0060</td><td>Detecção de queda</td><td>Residência 12<div class="small text-secondary">Sala</div></td><td><i class="bi bi-plug text-secondary"></i> Rede</td><td>há 47 min</td><td><span class="badge text-bg-danger">Offline</span></td><td class="text-end table-actions"><a class="btn btn-sm btn-outline-primary" href="dispositivo-detalhes.html"><i class="bi bi-eye"></i></a> <a class="btn btn-sm btn-outline-secondary" href="dispositivo-form.html?id=FD-0060"><i class="bi bi-pencil"></i></a> <button class="btn btn-sm btn-outline-danger" data-delete-device><i class="bi bi-trash"></i></button></td></tr>
+  </tbody></table><div id="deviceEmpty" class="empty-state d-none"><i class="bi bi-search fs-2 d-block mb-2"></i>Nenhum dispositivo corresponde aos filtros.</div></div>
+  <div class="card-footer d-flex align-items-center"><span class="small text-secondary" id="devicePageInfo"></span><div class="btn-group ms-auto"><button class="btn btn-outline-secondary btn-sm" id="devicePrev"><i class="bi bi-chevron-left"></i> Anterior</button><button class="btn btn-outline-secondary btn-sm" id="deviceNext">Próxima <i class="bi bi-chevron-right"></i></button></div></div>
+</section>
+<div class="modal fade" id="deleteDeviceModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5">Confirmar exclusão</h2><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="d-flex gap-3"><span class="severity-icon bg-danger-subtle text-danger"><i class="bi bi-trash"></i></span><div>Deseja remover <strong id="deleteDeviceName"></strong>?<p class="small text-secondary mt-2 mb-0">A remoção afetará apenas esta demonstração no navegador.</p></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button><button type="button" class="btn btn-danger" id="confirmDeleteDevice">Excluir</button></div></div></div></div>
+</div></div>
+    </main>
+    <footer class="app-footer"><div class="float-end d-none d-sm-inline">Protótipo acadêmico • dados simulados</div><strong>CasaSegura</strong> &copy; <span data-current-year></span></footer>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

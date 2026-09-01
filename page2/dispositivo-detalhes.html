@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo acadêmico de monitoramento de casas inteligentes com AdminLTE.">
+  <title>Detalhes do dispositivo | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="sidebar" aria-label="Abrir ou recolher menu lateral"><i class="bi bi-list fs-5"></i></button></li>
+          <li class="nav-item d-none d-md-block"><a href="dashboard.html" class="nav-link">Central</a></li>
+          <li class="nav-item d-none d-lg-block"><span class="nav-link text-secondary"><span class="status-dot bg-success"></span>Serviços operacionais</span></li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link position-relative" data-bs-toggle="dropdown" href="#" aria-label="Notificações">
+              <i class="bi bi-bell"></i><span class="badge text-bg-danger notification-badge">2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" style="min-width:310px">
+              <div class="p-3 border-bottom"><strong>Notificações recentes</strong></div>
+              <a href="alertas.html" class="dropdown-item py-3"><div class="d-flex"><i class="bi bi-exclamation-triangle-fill text-danger me-3"></i><div><strong>Possível queda detectada</strong><div class="small text-secondary">Residência 03 • há 4 min</div></div></div></a>
+              <a href="dispositivos.html" class="dropdown-item py-3 border-top"><div class="d-flex"><i class="bi bi-battery-half text-warning me-3"></i><div><strong>Bateria abaixo de 20%</strong><div class="small text-secondary">Sensor de porta • há 16 min</div></div></div></a>
+              <a href="alertas.html" class="dropdown-item text-center border-top py-2">Ver todos os alertas</a>
+            </div>
+          </li>
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></li>
+          <li class="nav-item d-none d-sm-block"><button class="nav-link btn border-0" type="button" data-ui-toggle="fullscreen" aria-label="Tela cheia"><i class="bi bi-arrows-fullscreen"></i></button></li>
+          <li class="nav-item dropdown ms-1">
+            <a class="nav-link navbar-user" data-bs-toggle="dropdown" href="#"><span class="avatar-circle">OP</span><span class="d-none d-md-inline">Operador</span><i class="bi bi-chevron-down small"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Preferências</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+        <a href="dashboard.html" class="sidebar-brand">
+          <span class="brand-icon"><i class="bi bi-house-door-fill"></i></span>
+          <span class="brand-copy"><span class="brand-text">CasaSegura</span><span class="brand-subtitle">Monitoramento inteligente</span></span>
+        </a>
+        <div class="sidebar-wrapper">
+          <div class="user-panel-custom">
+            <span class="avatar-circle">OP</span>
+            <div class="meta"><strong>Operador de plantão</strong><small>Central de monitoramento</small></div>
+          </div>
+          <nav class="mt-1" aria-label="Menu principal">
+            <ul class="nav sidebar-menu flex-column" role="menu">
+              <li class="nav-header">Visão geral</li>
+              <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="nav-icon bi bi-speedometer2"></i><p>Dashboard</p></a></li>
+              <li class="nav-item"><a href="alertas.html" class="nav-link"><i class="nav-icon bi bi-exclamation-octagon"></i><p>Alertas<span class="badge text-bg-danger ms-auto">2</span></p></a></li>
+              <li class="nav-header">Monitoramento</li>
+              <li class="nav-item menu-tree menu-open">
+                <a href="#" class="nav-link active" data-ui-treeview>
+                  <i class="nav-icon bi bi-hdd-network"></i><p>Cadastros<i class="right bi bi-chevron-right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="dispositivos.html" class="nav-link"><i class="nav-icon bi bi-broadcast-pin"></i><p>Dispositivos</p></a></li>
+                  <li class="nav-item"><a href="residentes.html" class="nav-link"><i class="nav-icon bi bi-people"></i><p>Residentes</p></a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="relatorios.html" class="nav-link"><i class="nav-icon bi bi-bar-chart-line"></i><p>Relatórios</p></a></li>
+              <li class="nav-header">Administração</li>
+              <li class="nav-item"><a href="configuracoes.html" class="nav-link"><i class="nav-icon bi bi-gear"></i><p>Configurações</p></a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-box-arrow-left"></i><p>Sair</p></a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-status-card">
+            <strong><span class="status-dot bg-success"></span>Central operacional</strong>
+            48 de 52 sensores conectados.<br><span data-current-time></span>
+          </div>
+        </div>
+      </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center g-2">
+            <div class="col-sm-8 page-title-wrap"><h1>Detalhes do dispositivo</h1><p>Telemetria, configuração e histórico do equipamento selecionado.</p></div>
+            <div class="col-sm-4"><ol class="breadcrumb float-sm-end mb-0"><li class="breadcrumb-item"><a href="dashboard.html">Início</a></li><li class="breadcrumb-item active" aria-current="page">Dispositivos</li></ol></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content"><div class="container-fluid">
+<section class="detail-hero mb-3"><div class="d-flex flex-wrap align-items-center gap-3"><span class="detail-icon"><i class="bi bi-person-bounding-box"></i></span><div><div class="d-flex flex-wrap gap-2 align-items-center"><h2 class="h3 mb-0">Sensor de queda Sala 01</h2><span class="badge text-bg-success">Online</span></div><p class="mb-0 opacity-75">FD-0048 • Residência 03 • Sala</p></div><div class="ms-auto d-flex flex-wrap gap-2 no-print"><button class="btn btn-light" id="testDevice"><i class="bi bi-lightning-charge me-1"></i>Testar dispositivo</button><button class="btn btn-outline-light" id="toggleDevice" data-disabled="false"><i class="bi bi-pause-circle me-1"></i>Desativar</button><a href="dispositivo-form.html?id=FD-0048" class="btn btn-outline-light"><i class="bi bi-pencil me-1"></i>Editar</a></div></div></section>
+<div class="row g-3 mb-3"><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body d-flex gap-3 align-items-center"><span class="metric-icon bg-success-subtle text-success"><i class="bi bi-battery-full"></i></span><div><div class="metric-value">92%</div><div class="metric-label">Nível da bateria</div></div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body d-flex gap-3 align-items-center"><span class="metric-icon bg-primary-subtle text-primary"><i class="bi bi-wifi"></i></span><div><div class="metric-value">-51 dBm</div><div class="metric-label">Intensidade do sinal</div></div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body d-flex gap-3 align-items-center"><span class="metric-icon bg-info-subtle text-info"><i class="bi bi-clock-history"></i></span><div><div class="metric-value">8 s</div><div class="metric-label">Última comunicação</div></div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body d-flex gap-3 align-items-center"><span class="metric-icon bg-warning-subtle text-warning"><i class="bi bi-calendar-check"></i></span><div><div class="metric-value">24 dias</div><div class="metric-label">Próxima revisão</div></div></div></div></div></div>
+<div class="row g-3"><div class="col-xl-8"><section class="card"><div class="card-header p-0"><ul class="nav nav-tabs" role="tablist"><li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview" type="button">Visão geral</button></li><li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#history" type="button">Histórico</button></li><li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#maintenance" type="button">Manutenção</button></li></ul></div><div class="card-body tab-content"><div class="tab-pane fade show active" id="overview"><div class="row g-3"><div class="col-md-6"><h3 class="h6">Identificação</h3><dl class="row small mb-0"><dt class="col-5 text-secondary">Modelo</dt><dd class="col-7">FD-Pro 2</dd><dt class="col-5 text-secondary">Número de série</dt><dd class="col-7">FD-2026-0048</dd><dt class="col-5 text-secondary">Firmware</dt><dd class="col-7">2.4.1</dd><dt class="col-5 text-secondary">Instalação</dt><dd class="col-7">10/02/2026</dd></dl></div><div class="col-md-6"><h3 class="h6">Configuração</h3><dl class="row small mb-0"><dt class="col-6 text-secondary">Sensibilidade</dt><dd class="col-6">Média</dd><dt class="col-6 text-secondary">Limiar</dt><dd class="col-6">82%</dd><dt class="col-6 text-secondary">Protocolo</dt><dd class="col-6">Wi-Fi</dd><dt class="col-6 text-secondary">Telemetria</dt><dd class="col-6">A cada 15 s</dd></dl></div></div><hr><h3 class="h6">Telemetria ambiental associada</h3><div class="chart-wrap"><canvas id="detailChart" aria-label="Gráfico de temperatura"></canvas></div></div><div class="tab-pane fade" id="history"><div class="table-responsive"><table class="table"><thead><tr><th>Data e hora</th><th>Evento</th><th>Confiança</th><th>Resultado</th></tr></thead><tbody><tr><td>16/07/2026 13:42</td><td>Possível queda</td><td>94%</td><td><span class="badge text-bg-warning">Em atendimento</span></td></tr><tr><td>14/07/2026 09:18</td><td>Movimento abrupto</td><td>68%</td><td><span class="badge text-bg-secondary">Falso positivo</span></td></tr><tr><td>08/07/2026 22:07</td><td>Objeto em queda</td><td>55%</td><td><span class="badge text-bg-secondary">Descartado</span></td></tr></tbody></table></div></div><div class="tab-pane fade" id="maintenance"><ul class="timeline-simple"><li><span class="timeline-icon bg-success"><i class="bi bi-check"></i></span><strong>Calibração concluída</strong><div class="small text-secondary">Ajuste do ângulo e teste com movimentos simulados.</div><time>20/06/2026</time></li><li><span class="timeline-icon bg-primary"><i class="bi bi-arrow-repeat"></i></span><strong>Firmware atualizado</strong><div class="small text-secondary">Versão 2.4.1 instalada remotamente.</div><time>05/05/2026</time></li><li><span class="timeline-icon bg-secondary"><i class="bi bi-tools"></i></span><strong>Instalação inicial</strong><div class="small text-secondary">Equipamento fixado e vinculado à residência.</div><time>10/02/2026</time></li></ul></div></div></section></div><div class="col-xl-4"><section class="card mb-3"><div class="card-header"><h2 class="card-title"><i class="bi bi-person me-2"></i>Vínculo</h2></div><div class="card-body"><div class="d-flex align-items-center gap-3"><span class="avatar-circle bg-primary">HS</span><div><strong>Helena S.</strong><div class="small text-secondary">Residência 03</div></div></div><hr><div class="d-flex justify-content-between small mb-2"><span class="text-secondary">Ambiente</span><strong>Sala</strong></div><div class="d-flex justify-content-between small mb-2"><span class="text-secondary">Gateway</span><strong>GW-0003</strong></div><div class="d-flex justify-content-between small"><span class="text-secondary">Contato de apoio</span><strong>Familiar 01</strong></div></div></section><section class="card"><div class="card-header"><h2 class="card-title"><i class="bi bi-shield-check me-2 text-success"></i>Diagnóstico</h2></div><div class="card-body"><div class="d-flex justify-content-between mb-2"><span>Comunicação</span><span class="badge text-bg-success">Normal</span></div><div class="d-flex justify-content-between mb-2"><span>Autoteste</span><span class="badge text-bg-success">Aprovado</span></div><div class="d-flex justify-content-between mb-2"><span>Calibração</span><span class="badge text-bg-success">Válida</span></div><div class="d-flex justify-content-between"><span>Sincronização</span><span class="badge text-bg-success">Atualizada</span></div><hr><button class="btn btn-outline-primary w-100" data-demo-action="Relatório de diagnóstico preparado para impressão."><i class="bi bi-file-earmark-text me-1"></i>Gerar diagnóstico</button></div></section></div></div>
+</div></div>
+    </main>
+    <footer class="app-footer"><div class="float-end d-none d-sm-inline">Protótipo acadêmico • dados simulados</div><strong>CasaSegura</strong> &copy; <span data-current-year></span></footer>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

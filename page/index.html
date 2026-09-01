@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CasaSegura</title>
+
+    <script>
+    (() => {
+        'use strict';
+        const STORAGE_KEY = 'lte-theme';
+        let storedTheme = null;
+
+        try {
+            storedTheme = localStorage.getItem(STORAGE_KEY);
+        } catch (error) {
+            console.warn('Não foi possível ler o tema salvo.', error);
+        }
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const resolvedTheme = storedTheme === 'dark' || storedTheme === 'light'
+                ? storedTheme : (prefersDark ? 'dark' : 'light');
+
+        document.documentElement.setAttribute('data-bs-theme', resolvedTheme);
+        document.documentElement.style.colorScheme = resolvedTheme;
+    })();
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@4.1.0/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <nav class="app-header navbar navbar-expand bg-body">
+        <!-- Barra superior -->
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        data-lte-toggle="sidebar"
+                        href="#"
+                        role="button"
+                        aria-label="Abrir ou recolher o menu lateral"
+                    >
+                        <i class="bi bi-list" aria-hidden="true"></i>
+                    </a>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                    <a href="index.html" class="nav-link">Central de monitoramento</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                    <button
+                        class="btn btn-link nav-link dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-label="Alterar tema visual"
+                    >
+                        <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+                        <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+                        <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button type="button" class="dropdown-item" data-bs-theme-value="light">Claro</button></li>
+                        <li><button type="button" class="dropdown-item" data-bs-theme-value="dark">Escuro</button></li>
+                        <li><button type="button" class="dropdown-item" data-bs-theme-value="auto">Automático</button></li>
+                    </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-person-circle me-1"></i>
+                        <span class="d-none d-sm-inline">Operador</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!-- Menu lateral -->
+            <div class="sidebar-brand">
+                <a href="index.html" class="brand-link text-decoration-none">
+                    <span class="brand-icon">
+                    <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+                    </span>
+                    <span class="brand-text fw-light">CasaSegura</span>
+                </a>
+                </div>
+
+                <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Menu principal">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false" role="menu" >
+                    <li class="nav-header">VISÃO GERAL</li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                        <i class="nav-icon bi bi-speedometer2"></i>
+                        <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#eventos" class="nav-link">
+                        <i class="nav-icon bi bi-exclamation-octagon"></i>
+                        <p>
+                            Alertas
+                            <span class="nav-badge badge text-bg-danger me-3" id="sidebarAlertCount">2</span>
+                        </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">MONITORAMENTO</li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon bi bi-hdd-network"></i>
+                        <p>
+                            Cadastros
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon bi bi-broadcast-pin"></i>
+                            <p>Dispositivos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon bi bi-people"></i>
+                            <p>Residentes</p>
+                            </a>
+                        </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="app-main">
+        <!-- Conteúdo principal -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                    <div class="col-sm-7">
+                        <h1 class="mb-0">Dashboard operacional</h1>
+                    </div>
+                    <div class="col-sm-5">
+                        <ol class="breadcrumb float-sm-end mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-content">
+                <div class="container-fluid">
+                    <!-- O conteúdo do dashboard será inserido aqui. -->
+                    <div class="alert alert-info d-flex align-items-start gap-2">
+                        <i class="bi bi-info-circle-fill fs-5" aria-hidden="true"></i>
+                        <div>
+                            <strong>Protótipo acadêmico.</strong>
+                            Os dados desta interface são fictícios e não representam monitoramento médico real.
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="small-box text-bg-primary">
+                            <div class="inner">
+                                <h2>12</h2>
+                                <p>Residências monitoradas</p>
+                            </div>
+                            <i class="small-box-icon bi bi-house-door-fill" aria-hidden="true"></i>
+                            <a href="#" class="small-box-footer link-light link-underline-opacity-0">
+                                Ver residências <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="small-box text-bg-success">
+                            <div class="inner">
+                                <h2>48/52</h2>
+                                <p>Sensores conectados</p>
+                            </div>
+                            <i class="small-box-icon bi bi-broadcast-pin" aria-hidden="true"></i>
+                            <a href="#" class="small-box-footer link-light link-underline-opacity-0">
+                                Ver dispositivos <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="small-box text-bg-danger">
+                            <div class="inner">
+                                <h2 id="criticalAlertCount">2</h2>
+                                <p>Alertas críticos abertos</p>
+                            </div>
+                            <i class="small-box-icon bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+                            <a href="#eventos" class="small-box-footer link-light link-underline-opacity-0">
+                                Tratar alertas <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="small-box text-bg-warning">
+                            <div class="inner">
+                                <h2>03:42</h2>
+                                <p>Tempo médio de resposta</p>
+                            </div>
+                            <i class="small-box-icon bi bi-stopwatch-fill" aria-hidden="true"></i>
+                            <a href="#" class="small-box-footer link-dark link-underline-opacity-0">
+                                Ver indicador <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-xl-8">
+                            <!-- Card do gráfico -->
+                             <section class="card h-100">
+                                <div class="card-header">
+                                    <h2 class="card-title">
+                                    <i class="bi bi-activity me-2 text-primary"></i>
+                                    Eventos nas últimas 12 horas
+                                    </h2>
+                                    <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize">
+                                        <i class="bi bi-arrows-fullscreen"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                    <canvas id="eventsChart"></canvas>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <!-- Card de infraestrutura -->
+                            <section class="card h-100">
+                                <div class="card-header">
+                                    <h2 class="card-title">
+                                    <i class="bi bi-wifi me-2 text-success"></i>
+                                    Saúde da infraestrutura
+                                    </h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-1">
+                                    <span>Conectividade</span><strong>92%</strong>
+                                    </div>
+                                    <div class="progress mb-4">
+                                    <div class="progress-bar bg-success" style="width: 92%"></div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-1">
+                                    <span>Baterias acima de 30%</span><strong>88%</strong>
+                                    </div>
+                                    <div class="progress mb-4">
+                                    <div class="progress-bar bg-primary" style="width: 88%"></div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-1">
+                                    <span>Calibrações em dia</span><strong>79%</strong>
+                                    </div>
+                                    <div class="progress mb-4">
+                                    <div class="progress-bar bg-warning" style="width: 79%"></div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-outline-danger w-100" id="simulateAlertButton">
+                                    <i class="bi bi-exclamation-triangle me-1"></i>
+                                    Simular novo alerta
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <section class="card" id="eventos">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                            <i class="bi bi-clock-history me-2"></i>
+                            Eventos recentes
+                            </h2>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                <th>Horário</th>
+                                <th>Residência</th>
+                                <th>Evento</th>
+                                <th>Local</th>
+                                <th>Status</th>
+                                <th class="text-end">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="eventsTableBody">
+                                <tr>
+                                <td>13:42</td>
+                                <td><strong>Residência 03</strong><div class="small text-body-secondary">Helena S.</div></td>
+                                <td><span class="badge text-bg-danger">Possível queda</span></td>
+                                <td>Sala</td>
+                                <td data-status-cell><span class="badge text-bg-warning">Em atendimento</span></td>
+                                <td class="text-end">
+                                    <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline-success"
+                                    data-action="resolve-alert"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#resolveAlertModal"
+                                    >
+                                    Resolver
+                                    </button>
+                                </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+        <!-- Rodapé -->
+            <div class="float-end d-none d-sm-inline">
+                Interface exclusivamente front-end
+            </div>
+            <strong>CasaSegura &copy; <span id="currentYear"></span></strong>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="resolveAlertModal" tabindex="-1" aria-labelledby="resolveAlertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="resolveAlertModalLabel">Confirmar resolução</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Deseja marcar este alerta como resolvido? A alteração será apenas visual.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="confirmResolveAlert">Confirmar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div class="toast" id="appToast" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-header">
+            <i class="bi bi-house-heart-fill text-primary me-2"></i>
+            <strong class="me-auto">CasaSegura</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+            <div class="toast-body" id="appToastMessage"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@4.1.0/dist/js/adminlte.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

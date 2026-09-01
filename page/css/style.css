@@ -1,0 +1,57 @@
+/* Personalização visual aplicada depois do AdminLTE. */
+
+.sidebar-brand .brand-link {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+    min-height: 57px;
+    padding: 0.75rem 1rem;
+}
+
+.brand-icon {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    display: inline-flex;
+    font-size: 1.25rem;
+    height: 2.25rem;
+    justify-content: center;
+    width: 2.25rem;
+}
+
+.small-box .inner h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.small-box .inner p {
+    margin-bottom: 0;
+}
+
+.chart-container {
+    min-height: 320px;
+    position: relative;
+}
+
+.progress {
+    height: 0.75rem;
+}
+
+.table td, .table th {
+    white-space: nowrap;
+}
+
+#eventos {
+    scroll-margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+    .app-content-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .chart-container {
+        min-height: 260px;
+    }
+}

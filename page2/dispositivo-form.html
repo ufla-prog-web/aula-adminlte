@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo acadêmico de monitoramento de casas inteligentes com AdminLTE.">
+  <title>Cadastro de dispositivo | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="sidebar" aria-label="Abrir ou recolher menu lateral"><i class="bi bi-list fs-5"></i></button></li>
+          <li class="nav-item d-none d-md-block"><a href="dashboard.html" class="nav-link">Central</a></li>
+          <li class="nav-item d-none d-lg-block"><span class="nav-link text-secondary"><span class="status-dot bg-success"></span>Serviços operacionais</span></li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link position-relative" data-bs-toggle="dropdown" href="#" aria-label="Notificações">
+              <i class="bi bi-bell"></i><span class="badge text-bg-danger notification-badge">2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" style="min-width:310px">
+              <div class="p-3 border-bottom"><strong>Notificações recentes</strong></div>
+              <a href="alertas.html" class="dropdown-item py-3"><div class="d-flex"><i class="bi bi-exclamation-triangle-fill text-danger me-3"></i><div><strong>Possível queda detectada</strong><div class="small text-secondary">Residência 03 • há 4 min</div></div></div></a>
+              <a href="dispositivos.html" class="dropdown-item py-3 border-top"><div class="d-flex"><i class="bi bi-battery-half text-warning me-3"></i><div><strong>Bateria abaixo de 20%</strong><div class="small text-secondary">Sensor de porta • há 16 min</div></div></div></a>
+              <a href="alertas.html" class="dropdown-item text-center border-top py-2">Ver todos os alertas</a>
+            </div>
+          </li>
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></li>
+          <li class="nav-item d-none d-sm-block"><button class="nav-link btn border-0" type="button" data-ui-toggle="fullscreen" aria-label="Tela cheia"><i class="bi bi-arrows-fullscreen"></i></button></li>
+          <li class="nav-item dropdown ms-1">
+            <a class="nav-link navbar-user" data-bs-toggle="dropdown" href="#"><span class="avatar-circle">OP</span><span class="d-none d-md-inline">Operador</span><i class="bi bi-chevron-down small"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Preferências</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+        <a href="dashboard.html" class="sidebar-brand">
+          <span class="brand-icon"><i class="bi bi-house-door-fill"></i></span>
+          <span class="brand-copy"><span class="brand-text">CasaSegura</span><span class="brand-subtitle">Monitoramento inteligente</span></span>
+        </a>
+        <div class="sidebar-wrapper">
+          <div class="user-panel-custom">
+            <span class="avatar-circle">OP</span>
+            <div class="meta"><strong>Operador de plantão</strong><small>Central de monitoramento</small></div>
+          </div>
+          <nav class="mt-1" aria-label="Menu principal">
+            <ul class="nav sidebar-menu flex-column" role="menu">
+              <li class="nav-header">Visão geral</li>
+              <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="nav-icon bi bi-speedometer2"></i><p>Dashboard</p></a></li>
+              <li class="nav-item"><a href="alertas.html" class="nav-link"><i class="nav-icon bi bi-exclamation-octagon"></i><p>Alertas<span class="badge text-bg-danger ms-auto">2</span></p></a></li>
+              <li class="nav-header">Monitoramento</li>
+              <li class="nav-item menu-tree menu-open">
+                <a href="#" class="nav-link active" data-ui-treeview>
+                  <i class="nav-icon bi bi-hdd-network"></i><p>Cadastros<i class="right bi bi-chevron-right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="dispositivos.html" class="nav-link"><i class="nav-icon bi bi-broadcast-pin"></i><p>Dispositivos</p></a></li>
+                  <li class="nav-item"><a href="residentes.html" class="nav-link"><i class="nav-icon bi bi-people"></i><p>Residentes</p></a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="relatorios.html" class="nav-link"><i class="nav-icon bi bi-bar-chart-line"></i><p>Relatórios</p></a></li>
+              <li class="nav-header">Administração</li>
+              <li class="nav-item"><a href="configuracoes.html" class="nav-link"><i class="nav-icon bi bi-gear"></i><p>Configurações</p></a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-box-arrow-left"></i><p>Sair</p></a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-status-card">
+            <strong><span class="status-dot bg-success"></span>Central operacional</strong>
+            48 de 52 sensores conectados.<br><span data-current-time></span>
+          </div>
+        </div>
+      </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center g-2">
+            <div class="col-sm-8 page-title-wrap"><h1><span id="formPageTitle">Novo dispositivo</span></h1><p>Preencha os dados para simular o cadastro de um sensor.</p></div>
+            <div class="col-sm-4"><ol class="breadcrumb float-sm-end mb-0"><li class="breadcrumb-item"><a href="dashboard.html">Início</a></li><li class="breadcrumb-item active" aria-current="page">Dispositivos</li></ol></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content"><div class="container-fluid">
+<form id="deviceForm" class="needs-validation" novalidate>
+  <div class="row g-3">
+    <div class="col-xl-8"><section class="card"><div class="card-header"><h2 class="card-title" id="formCardTitle"><i class="bi bi-plus-circle me-2"></i>Identificação do dispositivo</h2></div><div class="card-body">
+      <div class="form-section-title">Informações principais</div><div class="row g-3">
+        <div class="col-md-8"><label class="form-label required" for="deviceName">Nome de identificação</label><input class="form-control" id="deviceName" name="name" placeholder="Ex.: Sensor de queda Sala 01" required><div class="invalid-feedback">Informe um nome para o dispositivo.</div></div>
+        <div class="col-md-4"><label class="form-label required" for="deviceCode">Código</label><input class="form-control" id="deviceCode" name="code" pattern="[A-Z]{2}-[0-9]{4}" placeholder="FD-0001" required><div class="form-text">Formato: duas letras e quatro números.</div><div class="invalid-feedback">Use o formato XX-0000.</div></div>
+        <div class="col-md-6"><label class="form-label required" for="deviceTypeField">Tipo</label><select class="form-select" id="deviceTypeField" name="type" required><option value="">Selecione</option><option value="queda">Detecção de queda</option><option value="movimento">Movimento ou presença</option><option value="ambiental">Sensor ambiental</option><option value="acesso">Acesso ou emergência</option></select><div class="invalid-feedback">Selecione um tipo.</div></div>
+        <div class="col-md-6"><label class="form-label required" for="deviceRoomField">Ambiente</label><select class="form-select" id="deviceRoomField" name="room" required><option value="">Selecione</option><option value="sala">Sala</option><option value="quarto">Quarto</option><option value="banheiro">Banheiro</option><option value="entrada">Entrada</option><option value="cozinha">Cozinha</option><option value="corredor">Corredor</option></select><div class="invalid-feedback">Selecione o ambiente.</div></div>
+        <div class="col-md-6"><label class="form-label required" for="deviceResident">Residência / beneficiário</label><select class="form-select" id="deviceResident" name="resident" required><option value="">Selecione</option><option value="helena">Residência 03 — Helena S.</option><option value="maria">Residência 01 — Maria L.</option><option value="antonio">Residência 08 — Antônio P.</option><option value="jose">Residência 05 — José R.</option></select><div class="invalid-feedback">Vincule o dispositivo a uma residência.</div></div>
+        <div class="col-md-6"><label class="form-label" for="deviceSerial">Número de série</label><input class="form-control" id="deviceSerial" name="serial" placeholder="FD-2026-0001"></div>
+        <div class="col-md-6"><label class="form-label required" for="deviceDate">Data de instalação</label><input type="date" class="form-control" id="deviceDate" name="installDate" required><div class="invalid-feedback">Informe a data de instalação.</div></div>
+        <div class="col-md-6"><label class="form-label" for="deviceProtocol">Protocolo de comunicação</label><select class="form-select" id="deviceProtocol" name="protocol"><option>Wi-Fi</option><option>Zigbee</option><option>Bluetooth Low Energy</option><option>LoRaWAN</option><option>Ethernet</option></select></div>
+      </div><hr class="my-4"><div class="form-section-title">Parâmetros de detecção</div><div class="row g-3">
+        <div class="col-md-4"><label class="form-label" for="deviceThreshold">Limiar de confiança (%)</label><input type="number" min="50" max="100" class="form-control" id="deviceThreshold" name="threshold" value="80"></div>
+        <div class="col-md-8"><label class="form-label d-block">Sensibilidade</label><div class="d-flex flex-wrap gap-4 pt-2"><div class="form-check"><input class="form-check-input" type="radio" name="sensitivity" id="sensLow" value="baixa"><label class="form-check-label" for="sensLow">Baixa</label></div><div class="form-check"><input class="form-check-input" type="radio" name="sensitivity" id="sensMedium" value="media" checked><label class="form-check-label" for="sensMedium">Média</label></div><div class="form-check"><input class="form-check-input" type="radio" name="sensitivity" id="sensHigh" value="alta"><label class="form-check-label" for="sensHigh">Alta</label></div></div></div>
+        <div class="col-12"><label class="form-label">Notificações geradas</label><div class="row g-2"><div class="col-md-4"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" name="notifyCentral" id="notifyCentral" checked><label class="form-check-label" for="notifyCentral">Central de monitoramento</label></div></div><div class="col-md-4"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" name="notifyFamily" id="notifyFamily" checked><label class="form-check-label" for="notifyFamily">Contato familiar</label></div></div><div class="col-md-4"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" name="notifyHealth" id="notifyHealth"><label class="form-check-label" for="notifyHealth">Equipe de saúde</label></div></div></div></div>
+        <div class="col-12"><label class="form-label" for="deviceNotes">Observações técnicas</label><textarea class="form-control" id="deviceNotes" name="notes" rows="4" placeholder="Posicionamento, calibração, restrições ou observações da instalação."></textarea></div>
+      </div>
+    </div><div class="card-footer d-flex flex-wrap gap-2"><button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Salvar dispositivo</button><button type="button" class="btn btn-outline-secondary" id="resetDeviceForm"><i class="bi bi-arrow-counterclockwise me-1"></i>Limpar</button><a href="dispositivos.html" class="btn btn-link ms-auto">Cancelar e voltar</a></div></section></div>
+    <div class="col-xl-4"><section class="card mb-3"><div class="card-header"><h2 class="card-title"><i class="bi bi-clipboard-check me-2 text-success"></i>Checklist de instalação</h2></div><div class="card-body"><div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="checkPosition"><label class="form-check-label" for="checkPosition"><strong>Posicionamento verificado</strong><span class="d-block small text-secondary">Sem obstáculos e cobrindo a área prevista.</span></label></div><div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="checkNetwork"><label class="form-check-label" for="checkNetwork"><strong>Conectividade testada</strong><span class="d-block small text-secondary">Sinal e latência dentro do esperado.</span></label></div><div class="form-check"><input class="form-check-input" type="checkbox" id="checkConsent"><label class="form-check-label" for="checkConsent"><strong>Consentimento registrado</strong><span class="d-block small text-secondary">Políticas de privacidade apresentadas.</span></label></div></div></section><section class="card"><div class="card-header"><h2 class="card-title"><i class="bi bi-shield-check me-2 text-primary"></i>Privacidade por projeto</h2></div><div class="card-body small text-secondary"><p>Evite inserir dados sensíveis nas observações. Utilize identificadores internos e registre apenas as informações necessárias ao funcionamento do protótipo.</p><div class="alert alert-warning mb-0"><i class="bi bi-exclamation-triangle me-1"></i>Não utilize este formulário para dados clínicos reais.</div></div></section></div>
+  </div>
+</form>
+</div></div>
+    </main>
+    <footer class="app-footer"><div class="float-end d-none d-sm-inline">Protótipo acadêmico • dados simulados</div><strong>CasaSegura</strong> &copy; <span data-current-year></span></footer>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

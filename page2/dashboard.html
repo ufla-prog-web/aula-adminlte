@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo acadêmico de monitoramento de casas inteligentes com AdminLTE.">
+  <title>Dashboard | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="sidebar" aria-label="Abrir ou recolher menu lateral"><i class="bi bi-list fs-5"></i></button></li>
+          <li class="nav-item d-none d-md-block"><a href="dashboard.html" class="nav-link">Central</a></li>
+          <li class="nav-item d-none d-lg-block"><span class="nav-link text-secondary"><span class="status-dot bg-success"></span>Serviços operacionais</span></li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link position-relative" data-bs-toggle="dropdown" href="#" aria-label="Notificações">
+              <i class="bi bi-bell"></i><span class="badge text-bg-danger notification-badge">2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" style="min-width:310px">
+              <div class="p-3 border-bottom"><strong>Notificações recentes</strong></div>
+              <a href="alertas.html" class="dropdown-item py-3"><div class="d-flex"><i class="bi bi-exclamation-triangle-fill text-danger me-3"></i><div><strong>Possível queda detectada</strong><div class="small text-secondary">Residência 03 • há 4 min</div></div></div></a>
+              <a href="dispositivos.html" class="dropdown-item py-3 border-top"><div class="d-flex"><i class="bi bi-battery-half text-warning me-3"></i><div><strong>Bateria abaixo de 20%</strong><div class="small text-secondary">Sensor de porta • há 16 min</div></div></div></a>
+              <a href="alertas.html" class="dropdown-item text-center border-top py-2">Ver todos os alertas</a>
+            </div>
+          </li>
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></li>
+          <li class="nav-item d-none d-sm-block"><button class="nav-link btn border-0" type="button" data-ui-toggle="fullscreen" aria-label="Tela cheia"><i class="bi bi-arrows-fullscreen"></i></button></li>
+          <li class="nav-item dropdown ms-1">
+            <a class="nav-link navbar-user" data-bs-toggle="dropdown" href="#"><span class="avatar-circle">OP</span><span class="d-none d-md-inline">Operador</span><i class="bi bi-chevron-down small"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Preferências</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+        <a href="dashboard.html" class="sidebar-brand">
+          <span class="brand-icon"><i class="bi bi-house-door-fill"></i></span>
+          <span class="brand-copy"><span class="brand-text">CasaSegura</span><span class="brand-subtitle">Monitoramento inteligente</span></span>
+        </a>
+        <div class="sidebar-wrapper">
+          <div class="user-panel-custom">
+            <span class="avatar-circle">OP</span>
+            <div class="meta"><strong>Operador de plantão</strong><small>Central de monitoramento</small></div>
+          </div>
+          <nav class="mt-1" aria-label="Menu principal">
+            <ul class="nav sidebar-menu flex-column" role="menu">
+              <li class="nav-header">Visão geral</li>
+              <li class="nav-item"><a href="dashboard.html" class="nav-link active"><i class="nav-icon bi bi-speedometer2"></i><p>Dashboard</p></a></li>
+              <li class="nav-item"><a href="alertas.html" class="nav-link"><i class="nav-icon bi bi-exclamation-octagon"></i><p>Alertas<span class="badge text-bg-danger ms-auto">2</span></p></a></li>
+              <li class="nav-header">Monitoramento</li>
+              <li class="nav-item menu-tree">
+                <a href="#" class="nav-link" data-ui-treeview>
+                  <i class="nav-icon bi bi-hdd-network"></i><p>Cadastros<i class="right bi bi-chevron-right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="dispositivos.html" class="nav-link"><i class="nav-icon bi bi-broadcast-pin"></i><p>Dispositivos</p></a></li>
+                  <li class="nav-item"><a href="residentes.html" class="nav-link"><i class="nav-icon bi bi-people"></i><p>Residentes</p></a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="relatorios.html" class="nav-link"><i class="nav-icon bi bi-bar-chart-line"></i><p>Relatórios</p></a></li>
+              <li class="nav-header">Administração</li>
+              <li class="nav-item"><a href="configuracoes.html" class="nav-link"><i class="nav-icon bi bi-gear"></i><p>Configurações</p></a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-box-arrow-left"></i><p>Sair</p></a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-status-card">
+            <strong><span class="status-dot bg-success"></span>Central operacional</strong>
+            48 de 52 sensores conectados.<br><span data-current-time></span>
+          </div>
+        </div>
+      </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center g-2">
+            <div class="col-sm-8 page-title-wrap"><h1>Dashboard operacional</h1><p>Visão consolidada das residências, sensores e alertas ativos.</p></div>
+            <div class="col-sm-4"><ol class="breadcrumb float-sm-end mb-0"><li class="breadcrumb-item"><a href="dashboard.html">Início</a></li><li class="breadcrumb-item active" aria-current="page">Dashboard operacional</li></ol></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content"><div class="container-fluid">
+<div class="alert alert-info d-flex align-items-start gap-3" role="alert">
+  <i class="bi bi-mortarboard-fill fs-4"></i><div><strong>Ambiente demonstrativo.</strong> Todos os nomes, leituras, eventos e indicadores são fictícios. A interface não substitui avaliação clínica ou atendimento de emergência.</div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-sm-6 col-xl-3"><div class="small-box text-bg-primary"><div class="inner"><h3>12</h3><p>Residências monitoradas</p></div><i class="small-box-icon bi bi-house-fill"></i><a href="residentes.html" class="small-box-footer">Ver residentes <i class="bi bi-arrow-right-circle ms-1"></i></a></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="small-box text-bg-success"><div class="inner"><h3>48/52</h3><p>Sensores conectados</p></div><i class="small-box-icon bi bi-broadcast-pin"></i><a href="dispositivos.html" class="small-box-footer">Ver dispositivos <i class="bi bi-arrow-right-circle ms-1"></i></a></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="small-box text-bg-danger"><div class="inner"><h3 id="criticalAlertCount">2</h3><p>Alertas críticos abertos</p></div><i class="small-box-icon bi bi-exclamation-triangle-fill"></i><a href="alertas.html" class="small-box-footer">Tratar alertas <i class="bi bi-arrow-right-circle ms-1"></i></a></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="small-box text-bg-warning"><div class="inner"><h3>03:42</h3><p>Tempo médio de resposta</p></div><i class="small-box-icon bi bi-stopwatch-fill"></i><a href="relatorios.html" class="small-box-footer">Analisar indicador <i class="bi bi-arrow-right-circle ms-1"></i></a></div></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-xl-8"><section class="card h-100"><div class="card-header d-flex align-items-center"><h2 class="card-title"><i class="bi bi-activity me-2 text-primary"></i>Eventos nas últimas 12 horas</h2><div class="ms-auto chart-legend"><span><span class="legend-dot bg-primary"></span>Todos os eventos</span><span><span class="legend-dot bg-danger"></span>Críticos</span></div></div><div class="card-body"><div class="chart-wrap"><canvas id="eventsChart" aria-label="Gráfico de eventos por horário"></canvas></div></div></section></div>
+  <div class="col-xl-4"><section class="card h-100"><div class="card-header"><h2 class="card-title"><i class="bi bi-wifi me-2 text-success"></i>Saúde da infraestrutura</h2></div><div class="card-body">
+    <div class="d-flex justify-content-between mb-1"><span>Conectividade</span><strong>92%</strong></div><div class="progress progress-thin mb-3"><div class="progress-bar bg-success" style="width:92%"></div></div>
+    <div class="d-flex justify-content-between mb-1"><span>Baterias acima de 30%</span><strong>88%</strong></div><div class="progress progress-thin mb-3"><div class="progress-bar bg-primary" style="width:88%"></div></div>
+    <div class="d-flex justify-content-between mb-1"><span>Calibrações em dia</span><strong>79%</strong></div><div class="progress progress-thin mb-4"><div class="progress-bar bg-warning" style="width:79%"></div></div>
+    <div class="row g-2 text-center"><div class="col-4"><div class="border rounded p-2"><strong class="d-block fs-5">4</strong><span class="small text-secondary">Offline</span></div></div><div class="col-4"><div class="border rounded p-2"><strong class="d-block fs-5">3</strong><span class="small text-secondary">Bateria</span></div></div><div class="col-4"><div class="border rounded p-2"><strong class="d-block fs-5">2</strong><span class="small text-secondary">Revisão</span></div></div></div>
+  </div></section></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-xl-7"><section class="card h-100"><div class="card-header d-flex align-items-center"><h2 class="card-title"><i class="bi bi-clock-history me-2"></i>Eventos recentes</h2><a href="alertas.html" class="btn btn-sm btn-outline-primary ms-auto">Ver todos</a></div><div class="table-responsive"><table class="table table-hover mb-0"><thead><tr><th>Horário</th><th>Residência</th><th>Evento</th><th>Local</th><th>Status</th></tr></thead><tbody>
+    <tr><td>13:42</td><td><strong>Residência 03</strong><div class="small text-secondary">Helena S.</div></td><td><span class="badge text-bg-danger">Possível queda</span></td><td>Sala</td><td><span class="badge text-bg-warning">Em atendimento</span></td></tr>
+    <tr><td>13:26</td><td><strong>Residência 08</strong><div class="small text-secondary">Antônio P.</div></td><td><span class="badge text-bg-primary">Movimento incomum</span></td><td>Corredor</td><td><span class="badge text-bg-info">Em análise</span></td></tr>
+    <tr><td>12:58</td><td><strong>Residência 01</strong><div class="small text-secondary">Maria L.</div></td><td><span class="badge text-bg-warning">Temperatura elevada</span></td><td>Quarto</td><td><span class="badge text-bg-success">Resolvido</span></td></tr>
+    <tr><td>12:31</td><td><strong>Residência 05</strong><div class="small text-secondary">José R.</div></td><td><span class="badge text-bg-secondary">Porta aberta</span></td><td>Entrada</td><td><span class="badge text-bg-success">Resolvido</span></td></tr>
+  </tbody></table></div></section></div>
+  <div class="col-xl-5"><section class="card h-100"><div class="card-header"><h2 class="card-title"><i class="bi bi-diagram-3 me-2 text-primary"></i>Fluxo do alerta crítico</h2></div><div class="card-body"><ul class="timeline-simple">
+    <li><span class="timeline-icon bg-danger"><i class="bi bi-person-bounding-box"></i></span><strong>Evento detectado</strong><div class="small text-secondary">Sensor da sala identificou padrão compatível com queda.</div><time>13:42:08</time></li>
+    <li><span class="timeline-icon bg-primary"><i class="bi bi-cpu"></i></span><strong>Validação automática</strong><div class="small text-secondary">Câmera preservando privacidade e sensor inercial confirmaram anomalia.</div><time>13:42:12</time></li>
+    <li><span class="timeline-icon bg-warning"><i class="bi bi-headset"></i></span><strong>Contato iniciado</strong><div class="small text-secondary">Operador tentou comunicação por alto-falante.</div><time>13:42:35</time></li>
+    <li><span class="timeline-icon bg-success"><i class="bi bi-telephone-forward"></i></span><strong>Equipe acionada</strong><div class="small text-secondary">Contato de apoio recebeu localização e resumo do evento.</div><time>13:44:10</time></li>
+  </ul></div></section></div>
+</div>
+<section class="card"><div class="card-header d-flex align-items-center"><h2 class="card-title"><i class="bi bi-grid-1x2 me-2"></i>Ambientes monitorados — Residência 03</h2><span class="badge text-bg-danger ms-auto"><span class="status-dot bg-white pulse-danger"></span>Alerta ativo</span></div><div class="card-body"><div class="room-grid">
+  <div class="room-card"><div class="d-flex justify-content-between"><span class="room-icon bg-primary-subtle text-primary"><i class="bi bi-lamp"></i></span><span class="badge text-bg-danger align-self-start">Alerta</span></div><h3 class="h6 mt-3 mb-1">Sala</h3><div class="small text-secondary">3 sensores • última leitura há 8 s</div><hr><div class="d-flex justify-content-between small"><span>Movimento</span><strong>Detectado</strong></div></div>
+  <div class="room-card"><div class="d-flex justify-content-between"><span class="room-icon bg-success-subtle text-success"><i class="bi bi-door-open"></i></span><span class="badge text-bg-success align-self-start">Normal</span></div><h3 class="h6 mt-3 mb-1">Entrada</h3><div class="small text-secondary">2 sensores • última leitura há 21 s</div><hr><div class="d-flex justify-content-between small"><span>Porta</span><strong>Fechada</strong></div></div>
+  <div class="room-card"><div class="d-flex justify-content-between"><span class="room-icon bg-info-subtle text-info"><i class="bi bi-moon-stars"></i></span><span class="badge text-bg-success align-self-start">Normal</span></div><h3 class="h6 mt-3 mb-1">Quarto</h3><div class="small text-secondary">4 sensores • última leitura há 15 s</div><hr><div class="d-flex justify-content-between small"><span>Temperatura</span><strong>22,6 °C</strong></div></div>
+  <div class="room-card"><div class="d-flex justify-content-between"><span class="room-icon bg-warning-subtle text-warning"><i class="bi bi-droplet"></i></span><span class="badge text-bg-warning align-self-start">Atenção</span></div><h3 class="h6 mt-3 mb-1">Banheiro</h3><div class="small text-secondary">3 sensores • última leitura há 1 min</div><hr><div class="d-flex justify-content-between small"><span>Umidade</span><strong>78%</strong></div></div>
+</div></div></section>
+</div></div>
+    </main>
+    <footer class="app-footer"><div class="float-end d-none d-sm-inline">Protótipo acadêmico • dados simulados</div><strong>CasaSegura</strong> &copy; <span data-current-year></span></footer>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

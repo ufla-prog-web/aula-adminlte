@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo acadêmico de monitoramento de casas inteligentes com AdminLTE.">
+  <title>Relatórios | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body shadow-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="sidebar" aria-label="Abrir ou recolher menu lateral"><i class="bi bi-list fs-5"></i></button></li>
+          <li class="nav-item d-none d-md-block"><a href="dashboard.html" class="nav-link">Central</a></li>
+          <li class="nav-item d-none d-lg-block"><span class="nav-link text-secondary"><span class="status-dot bg-success"></span>Serviços operacionais</span></li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link position-relative" data-bs-toggle="dropdown" href="#" aria-label="Notificações">
+              <i class="bi bi-bell"></i><span class="badge text-bg-danger notification-badge">2</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0" style="min-width:310px">
+              <div class="p-3 border-bottom"><strong>Notificações recentes</strong></div>
+              <a href="alertas.html" class="dropdown-item py-3"><div class="d-flex"><i class="bi bi-exclamation-triangle-fill text-danger me-3"></i><div><strong>Possível queda detectada</strong><div class="small text-secondary">Residência 03 • há 4 min</div></div></div></a>
+              <a href="dispositivos.html" class="dropdown-item py-3 border-top"><div class="d-flex"><i class="bi bi-battery-half text-warning me-3"></i><div><strong>Bateria abaixo de 20%</strong><div class="small text-secondary">Sensor de porta • há 16 min</div></div></div></a>
+              <a href="alertas.html" class="dropdown-item text-center border-top py-2">Ver todos os alertas</a>
+            </div>
+          </li>
+          <li class="nav-item"><button class="nav-link btn border-0" type="button" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></li>
+          <li class="nav-item d-none d-sm-block"><button class="nav-link btn border-0" type="button" data-ui-toggle="fullscreen" aria-label="Tela cheia"><i class="bi bi-arrows-fullscreen"></i></button></li>
+          <li class="nav-item dropdown ms-1">
+            <a class="nav-link navbar-user" data-bs-toggle="dropdown" href="#"><span class="avatar-circle">OP</span><span class="d-none d-md-inline">Operador</span><i class="bi bi-chevron-down small"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Preferências</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <aside class="app-sidebar bg-dark shadow" data-bs-theme="dark">
+        <a href="dashboard.html" class="sidebar-brand">
+          <span class="brand-icon"><i class="bi bi-house-door-fill"></i></span>
+          <span class="brand-copy"><span class="brand-text">CasaSegura</span><span class="brand-subtitle">Monitoramento inteligente</span></span>
+        </a>
+        <div class="sidebar-wrapper">
+          <div class="user-panel-custom">
+            <span class="avatar-circle">OP</span>
+            <div class="meta"><strong>Operador de plantão</strong><small>Central de monitoramento</small></div>
+          </div>
+          <nav class="mt-1" aria-label="Menu principal">
+            <ul class="nav sidebar-menu flex-column" role="menu">
+              <li class="nav-header">Visão geral</li>
+              <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="nav-icon bi bi-speedometer2"></i><p>Dashboard</p></a></li>
+              <li class="nav-item"><a href="alertas.html" class="nav-link"><i class="nav-icon bi bi-exclamation-octagon"></i><p>Alertas<span class="badge text-bg-danger ms-auto">2</span></p></a></li>
+              <li class="nav-header">Monitoramento</li>
+              <li class="nav-item menu-tree">
+                <a href="#" class="nav-link" data-ui-treeview>
+                  <i class="nav-icon bi bi-hdd-network"></i><p>Cadastros<i class="right bi bi-chevron-right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="dispositivos.html" class="nav-link"><i class="nav-icon bi bi-broadcast-pin"></i><p>Dispositivos</p></a></li>
+                  <li class="nav-item"><a href="residentes.html" class="nav-link"><i class="nav-icon bi bi-people"></i><p>Residentes</p></a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="relatorios.html" class="nav-link active"><i class="nav-icon bi bi-bar-chart-line"></i><p>Relatórios</p></a></li>
+              <li class="nav-header">Administração</li>
+              <li class="nav-item"><a href="configuracoes.html" class="nav-link"><i class="nav-icon bi bi-gear"></i><p>Configurações</p></a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="nav-icon bi bi-box-arrow-left"></i><p>Sair</p></a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-status-card">
+            <strong><span class="status-dot bg-success"></span>Central operacional</strong>
+            48 de 52 sensores conectados.<br><span data-current-time></span>
+          </div>
+        </div>
+      </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center g-2">
+            <div class="col-sm-8 page-title-wrap"><h1>Relatórios e indicadores</h1><p>Analise eventos, desempenho operacional e disponibilidade dos sensores.</p></div>
+            <div class="col-sm-4"><ol class="breadcrumb float-sm-end mb-0"><li class="breadcrumb-item"><a href="dashboard.html">Início</a></li><li class="breadcrumb-item active" aria-current="page">Relatórios e indicadores</li></ol></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content"><div class="container-fluid">
+<section class="card mb-3 no-print"><div class="card-body"><div class="row g-3 align-items-end"><div class="col-md-3"><label class="form-label">Data inicial</label><input type="date" class="form-control" value="2026-07-01"></div><div class="col-md-3"><label class="form-label">Data final</label><input type="date" class="form-control" value="2026-07-16"></div><div class="col-md-3"><label class="form-label">Residência</label><select class="form-select"><option>Todas as residências</option><option>Residência 03</option><option>Residência 01</option><option>Residência 08</option></select></div><div class="col-md-3 d-grid"><button class="btn btn-primary" id="applyReportFilter"><i class="bi bi-funnel me-1"></i>Aplicar filtros</button></div></div></div></section>
+<div class="row g-3 mb-3"><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body"><div class="metric-label">Alertas registrados</div><div class="metric-value">70</div><div class="metric-trend text-danger mt-1"><i class="bi bi-arrow-up"></i> 8% no período</div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body"><div class="metric-label">Quedas confirmadas</div><div class="metric-value">7</div><div class="metric-trend text-success mt-1"><i class="bi bi-arrow-down"></i> 12% no período</div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body"><div class="metric-label">Tempo médio de resposta</div><div class="metric-value">03:42</div><div class="metric-trend text-success mt-1">31 s mais rápido</div></div></div></div><div class="col-sm-6 col-xl-3"><div class="card metric-card"><div class="card-body"><div class="metric-label">Disponibilidade dos sensores</div><div class="metric-value">92,3%</div><div class="metric-trend text-warning mt-1">Meta: 95%</div></div></div></div></div>
+<div class="row g-3 mb-3"><div class="col-xl-8"><section class="card h-100"><div class="card-header d-flex align-items-center"><h2 class="card-title"><i class="bi bi-bar-chart-line me-2 text-primary"></i>Eventos por categoria</h2><div class="ms-auto d-flex gap-2 no-print"><button class="btn btn-sm btn-outline-success" id="exportReport"><i class="bi bi-file-earmark-spreadsheet me-1"></i>CSV</button><button class="btn btn-sm btn-outline-secondary" id="printReport"><i class="bi bi-printer me-1"></i>Imprimir</button></div></div><div class="card-body"><div class="chart-wrap"><canvas id="reportChart" aria-label="Gráfico de eventos por categoria"></canvas></div></div></section></div><div class="col-xl-4"><section class="card h-100"><div class="card-header"><h2 class="card-title"><i class="bi bi-pie-chart me-2"></i>Desfecho dos alertas</h2></div><div class="card-body"><div class="d-flex justify-content-between mb-1"><span>Confirmados</span><strong>10%</strong></div><div class="progress mb-3" style="height:.75rem"><div class="progress-bar bg-danger" style="width:10%"></div></div><div class="d-flex justify-content-between mb-1"><span>Falsos positivos</span><strong>16%</strong></div><div class="progress mb-3" style="height:.75rem"><div class="progress-bar bg-warning" style="width:16%"></div></div><div class="d-flex justify-content-between mb-1"><span>Resolvidos automaticamente</span><strong>48%</strong></div><div class="progress mb-3" style="height:.75rem"><div class="progress-bar bg-primary" style="width:48%"></div></div><div class="d-flex justify-content-between mb-1"><span>Atendimento humano</span><strong>26%</strong></div><div class="progress" style="height:.75rem"><div class="progress-bar bg-success" style="width:26%"></div></div><div class="alert alert-info small mt-4 mb-0"><i class="bi bi-lightbulb me-1"></i>Os dados são fictícios e servem apenas para demonstrar componentes de relatório.</div></div></section></div></div>
+<section class="card"><div class="card-header"><h2 class="card-title"><i class="bi bi-table me-2"></i>Resumo por residência</h2></div><div class="table-responsive"><table class="table table-striped mb-0"><thead><tr><th>Residência</th><th>Alertas</th><th>Quedas confirmadas</th><th>Falsos positivos</th><th>Tempo médio</th><th>Sensores online</th></tr></thead><tbody><tr><td>Residência 03 — Helena S.</td><td>12</td><td>2</td><td>3</td><td>03:18</td><td><span class="badge text-bg-success">4/4</span></td></tr><tr><td>Residência 01 — Maria L.</td><td>8</td><td>1</td><td>2</td><td>04:02</td><td><span class="badge text-bg-success">5/5</span></td></tr><tr><td>Residência 08 — Antônio P.</td><td>10</td><td>1</td><td>2</td><td>03:51</td><td><span class="badge text-bg-warning">5/6</span></td></tr><tr><td>Residência 06 — Célia B.</td><td>9</td><td>1</td><td>1</td><td>04:22</td><td><span class="badge text-bg-warning">4/5</span></td></tr><tr><td>Demais residências</td><td>31</td><td>2</td><td>3</td><td>03:39</td><td><span class="badge text-bg-success">30/32</span></td></tr></tbody></table></div></section>
+</div></div>
+    </main>
+    <footer class="app-footer"><div class="float-end d-none d-sm-inline">Protótipo acadêmico • dados simulados</div><strong>CasaSegura</strong> &copy; <span data-current-year></span></footer>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

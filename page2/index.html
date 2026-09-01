@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acesso | CasaSegura</title>
+  <script>(function(){try{document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('casasegura-theme')||'light')}catch(e){}})();</script>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/adminlte.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="login-page-custom">
+  <main class="login-shell">
+    <section class="login-presentation" aria-labelledby="projectTitle">
+      <div class="d-flex align-items-center gap-3 mb-5"><span class="brand-icon"><i class="bi bi-house-door-fill"></i></span><div><h1 class="h4 mb-0" id="projectTitle">CasaSegura</h1><div class="opacity-75">Monitoramento inteligente</div></div></div>
+      <h2 class="display-6 fw-bold">Cuidado conectado para residências mais seguras.</h2>
+      <p class="lead opacity-75">Interface demonstrativa para acompanhamento de sensores, eventos e protocolos de atendimento em casas inteligentes.</p>
+      <div class="login-feature"><i class="bi bi-person-bounding-box"></i><div><strong>Detecção de eventos</strong><div class="opacity-75 small">Monitoramento de possíveis quedas e alterações ambientais.</div></div></div>
+      <div class="login-feature"><i class="bi bi-broadcast"></i><div><strong>Sensores integrados</strong><div class="opacity-75 small">Visão consolidada da conectividade e da telemetria.</div></div></div>
+      <div class="login-feature"><i class="bi bi-activity"></i><div><strong>Fluxo de atendimento</strong><div class="opacity-75 small">Registro simulado de notificações e respostas da equipe.</div></div></div>
+      <p class="small opacity-75 mt-5 mb-0">Uso exclusivamente acadêmico. Esta interface não constitui um dispositivo médico.</p>
+    </section>
+    <section class="login-form-panel">
+      <div>
+        <div class="d-flex justify-content-between align-items-center mb-4"><div><h2 class="h3 mb-1">Acesso à central</h2><p class="text-secondary mb-0">Informe suas credenciais para continuar.</p></div><button type="button" class="btn btn-outline-secondary btn-sm" data-ui-toggle="theme" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill" data-theme-icon></i></button></div>
+        <div class="alert alert-info small"><i class="bi bi-info-circle me-2"></i>Ambiente de demonstração: qualquer e-mail válido e senha com 6 caracteres serão aceitos.</div>
+        <form id="loginForm" class="needs-validation" novalidate>
+          <div class="mb-3"><label for="email" class="form-label">E-mail</label><div class="input-group"><span class="input-group-text"><i class="bi bi-envelope"></i></span><input type="email" class="form-control" id="email" value="operador@casasegura.local" required><div class="invalid-feedback">Informe um e-mail válido.</div></div></div>
+          <div class="mb-3"><label for="password" class="form-label">Senha</label><div class="input-group"><span class="input-group-text"><i class="bi bi-lock"></i></span><input type="password" class="form-control" id="password" value="123456" minlength="6" required><button class="btn btn-outline-secondary" type="button" id="togglePassword" aria-label="Mostrar ou ocultar senha"><i class="bi bi-eye"></i></button><div class="invalid-feedback">A senha deve possuir pelo menos 6 caracteres.</div></div></div>
+          <div class="d-flex justify-content-between align-items-center mb-4"><div class="form-check"><input class="form-check-input" type="checkbox" id="remember" checked><label class="form-check-label" for="remember">Lembrar acesso</label></div><a href="#" data-demo-action="Um link de recuperação seria enviado ao e-mail cadastrado.">Esqueci a senha</a></div>
+          <button type="submit" class="btn btn-primary w-100 py-2"><i class="bi bi-box-arrow-in-right me-2"></i>Entrar</button>
+        </form>
+        <p class="text-center small text-secondary mt-4 mb-0">Arquitetura inteligente para detecção e atendimento médico precoce de quedas.</p>
+      </div>
+    </section>
+  </main>
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
