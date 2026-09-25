@@ -180,13 +180,13 @@ Abra o Visual Studio Code (VS Code) na pasta `aula-adminlte`.
 O primeiro passo que faremos é criar a seguinte estrutura de pastas e arquivos. Crie a estrutura abaixo na raiz do projeto `aula-adminlte`.
 
 ```text
-aula-adminlte/
-└── code/
-    ├── index.html
-    ├── css/
-    │   └── style.css
-    └── js/
-        └── script.js
+🗂️ aula-adminlte/
+└── 📂 code/
+    ├── 📄 index.html
+    ├── 📂 css/
+    │   └── 📄 style.css
+    └── 📂 js/
+        └── 📄 script.js
 ```
 
 ### Criar a primeira página HTML
